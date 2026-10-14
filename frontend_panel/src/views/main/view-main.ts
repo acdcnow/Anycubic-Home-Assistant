@@ -1,7 +1,9 @@
 import { CSSResult, LitElement, PropertyValues, css, html, nothing } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { property, state } from "lit/decorators.js";
 
 import { localize } from "../../../localize/localize";
+
+import { customElementIfUndef } from "../../internal/register-custom-element";
 
 import {
   getDefaultCardConfig,
@@ -71,7 +73,7 @@ const infoFields: string[] = [
   "drying_progress",
 ];
 
-@customElement("anycubic-view-main")
+@customElementIfUndef("anycubic-view-main")
 export class AnycubicViewMain extends LitElement {
   @property()
   public hass!: HomeAssistant;

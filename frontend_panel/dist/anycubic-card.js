@@ -737,11 +737,6 @@
       }
       throw Error("Unsupported decorator location: " + r);
     };
-  /**
-       * @license
-       * Copyright 2017 Google LLC
-       * SPDX-License-Identifier: BSD-3-Clause
-       */
   function yt(t) {
     return (e, i) => "object" == typeof i ? ft(t, e, i) : ((t, e, i) => {
       const r = e.hasOwnProperty(i);
@@ -12365,11 +12360,7 @@
   };
   n([yt()], ta.prototype, "hass", void 0), n([yt()], ta.prototype, "language", void 0), n([yt({
     attribute: "card-config"
-  })], ta.prototype, "cardConfig", void 0), n([yt()], ta.prototype, "printers", void 0), n([vt()], ta.prototype, "configPage", void 0), n([vt()], ta.prototype, "availableStats", void 0), n([vt()], ta.prototype, "formSchemaMain", void 0), n([vt()], ta.prototype, "formSchemaColours", void 0), n([vt()], ta.prototype, "printerEntities", void 0), n([vt()], ta.prototype, "printerEntityIdPart", void 0), n([vt()], ta.prototype, "hasColorbox", void 0), n([vt()], ta.prototype, "isLCD", void 0), n([vt()], ta.prototype, "_tabMain", void 0), n([vt()], ta.prototype, "_tabStats", void 0), n([vt()], ta.prototype, "_tabColours", void 0), n([vt()], ta.prototype, "_labelPrinter_id", void 0), n([vt()], ta.prototype, "_labelVertical", void 0), n([vt()], ta.prototype, "_labelRound", void 0), n([vt()], ta.prototype, "_labelUse_24hr", void 0), n([vt()], ta.prototype, "_labelShowSettingsButton", void 0), n([vt()], ta.prototype, "_labelAlwaysShow", void 0), n([vt()], ta.prototype, "_labelTemperatureUnit", void 0), n([vt()], ta.prototype, "_labelLightEntityId", void 0), n([vt()], ta.prototype, "_labelPowerEntityId", void 0), n([vt()], ta.prototype, "_labelCameraEntityId", void 0), n([vt()], ta.prototype, "_helperLightEntityId", void 0), n([vt()], ta.prototype, "_helperPowerEntityId", void 0), n([vt()], ta.prototype, "_helperCameraEntityId", void 0), n([vt()], ta.prototype, "_labelScaleFactor", void 0), n([vt()], ta.prototype, "_labelSlotColors", void 0), n([vt()], ta.prototype, "_labelMediaView", void 0), n([vt()], ta.prototype, "_labelShowControls", void 0), n([vt()], ta.prototype, "_labelShowMoveButtons", void 0), n([vt()], ta.prototype, "_labelSections", void 0), n([vt()], ta.prototype, "_labelPrinterArt", void 0), ta = n([(t => (e, i) => {
-    void 0 !== i ? i.addInitializer(() => {
-      customElements.define(t, e);
-    }) : customElements.define(t, e);
-  })("anycubic-printercard-configure")], ta), window.console.info("%c ANYCUBIC-CARD %c v0.2.2 ", "color: orange; font-weight: bold; background: black", "color: white; font-weight: bold; background: dimgray");
+  })], ta.prototype, "cardConfig", void 0), n([yt()], ta.prototype, "printers", void 0), n([vt()], ta.prototype, "configPage", void 0), n([vt()], ta.prototype, "availableStats", void 0), n([vt()], ta.prototype, "formSchemaMain", void 0), n([vt()], ta.prototype, "formSchemaColours", void 0), n([vt()], ta.prototype, "printerEntities", void 0), n([vt()], ta.prototype, "printerEntityIdPart", void 0), n([vt()], ta.prototype, "hasColorbox", void 0), n([vt()], ta.prototype, "isLCD", void 0), n([vt()], ta.prototype, "_tabMain", void 0), n([vt()], ta.prototype, "_tabStats", void 0), n([vt()], ta.prototype, "_tabColours", void 0), n([vt()], ta.prototype, "_labelPrinter_id", void 0), n([vt()], ta.prototype, "_labelVertical", void 0), n([vt()], ta.prototype, "_labelRound", void 0), n([vt()], ta.prototype, "_labelUse_24hr", void 0), n([vt()], ta.prototype, "_labelShowSettingsButton", void 0), n([vt()], ta.prototype, "_labelAlwaysShow", void 0), n([vt()], ta.prototype, "_labelTemperatureUnit", void 0), n([vt()], ta.prototype, "_labelLightEntityId", void 0), n([vt()], ta.prototype, "_labelPowerEntityId", void 0), n([vt()], ta.prototype, "_labelCameraEntityId", void 0), n([vt()], ta.prototype, "_helperLightEntityId", void 0), n([vt()], ta.prototype, "_helperPowerEntityId", void 0), n([vt()], ta.prototype, "_helperCameraEntityId", void 0), n([vt()], ta.prototype, "_labelScaleFactor", void 0), n([vt()], ta.prototype, "_labelSlotColors", void 0), n([vt()], ta.prototype, "_labelMediaView", void 0), n([vt()], ta.prototype, "_labelShowControls", void 0), n([vt()], ta.prototype, "_labelShowMoveButtons", void 0), n([vt()], ta.prototype, "_labelSections", void 0), n([vt()], ta.prototype, "_labelPrinterArt", void 0), ta = n([$t("anycubic-printercard-configure")], ta), window.console.info("%c ANYCUBIC-CARD %c v0.2.2 ", "color: orange; font-weight: bold; background: black", "color: white; font-weight: bold; background: dimgray");
   const ea = wi();
   function ia(t) {
     var e, i;

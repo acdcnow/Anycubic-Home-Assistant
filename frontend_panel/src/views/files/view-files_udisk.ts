@@ -1,5 +1,4 @@
 import { PropertyValues } from "lit";
-import { customElement } from "lit/decorators.js";
 
 import { AnycubicViewFilesBase } from "./view-files_base";
 import { platform } from "../../const";
@@ -15,7 +14,9 @@ import {
   EvtTargFileInfo,
 } from "../../types";
 
-@customElement("anycubic-view-files_udisk")
+import { customElementIfUndef } from "../../internal/register-custom-element";
+
+@customElementIfUndef("anycubic-view-files_udisk")
 export class AnycubicViewFilesUdisk extends AnycubicViewFilesBase {
   protected willUpdate(changedProperties: PropertyValues<this>): void {
     super.willUpdate(changedProperties);

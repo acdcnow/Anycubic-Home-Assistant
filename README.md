@@ -218,8 +218,13 @@ integration it already has, not a new one. Concretely:
    `WaresWichall/hass-anycubic_cloud`, and add this one — it is in the **default catalog**, so
    just search "Anycubic". Do **not** delete the integration from Settings → Devices; leave the
    config entry alone.
-2. Download, restart Home Assistant.
-3. That's it. The entry loads, the entities repopulate under their old ids, and the sidebar
+2. If you also installed the **standalone card** (`WaresWichall/hass-anycubic_card`, a
+   **Frontend**/**Dashboard** entry in HACS), remove it and its dashboard resource — the card
+   ships inside the integration since 2.x, and two copies define the same element names, which
+   is the ["already been used with this registry"](#a-dashboard-console-logs-already-been-used-with-this-registry)
+   error.
+3. Download, restart Home Assistant.
+4. That's it. The entry loads, the entities repopulate under their old ids, and the sidebar
    panel appears with the [showcase](#-build-this-on-your-own-dashboard).
 
 **New since 0.2.2 that is worth a look on day one:** the
@@ -1736,6 +1741,38 @@ the integration isn't running, or is too old to serve it (1 or 2).
 > 💡 One last thing that catches people even once the card *is* loading: Home Assistant's
 > **Add card** dialog opens on the **By entity** tab, and custom cards only appear under
 > **By card**. That's where "Anycubic Card" will be.
+
+</details>
+
+<details>
+<summary><b>A dashboard console logs "already been used with this registry"</b></summary>
+
+<br>
+
+```
+Failed to execute 'define' on 'CustomElementRegistry': the name
+"anycubic-printercard-configure" has already been used with this registry
+```
+
+**Two copies of the same card are loaded.** The browser keeps whichever registered an element
+first and refuses the other, so the element in the message (`anycubic-card`,
+`anycubic-printercard-configure`, …) is only the first one that collided. The integration's own
+card is injected when the frontend boots, before dashboards load their resources, so the copy
+that trips is normally the other one: the **old standalone frontend card**
+(`WaresWichall/hass-anycubic_card`, installed in HACS under **Frontend**, some versions call it
+**Dashboard**). It is redundant since 2.x — the card ships inside the integration and registers
+itself — and it defines the same element names.
+
+1. In HACS, open **Frontend** and remove the **Anycubic** card repository.
+2. **Settings → Dashboards → ⋮ (top right) → Resources**, and delete the
+   `/hacsfiles/hass-anycubic_card/anycubic-card.js` entry.
+3. Hard refresh: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>, or
+   <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on a Mac.
+
+Nothing else needs it — see [the card isn't offered](#the-card-isnt-offered-or-a-dashboard-says-custom-element-not-found-anycubic-card).
+The error on its own does not break a dashboard: whichever copy loaded first keeps working. The
+trouble is that the two copies are different versions, so you can be looking at the old card's
+UI while the entities come from the new integration.
 
 </details>
 
